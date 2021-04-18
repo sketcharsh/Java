@@ -1,0 +1,55 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - EmplJDBC",
+            "request": "launch",
+            "mainClass": "EmplJDBC",
+            "projectName": "Frame"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Calc1",
+            "request": "launch",
+            "mainClass": "Calc1",
+            "projectName": "src_f303cef7"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Set1",
+            "request": "launch",
+            "mainClass": "Set1",
+            "projectName": "src_f303cef7"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - panel",
+            "request": "launch",
+            "mainClass": "panel",
+            "projectName": "src_f303cef7"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - RegForm",
+            "request": "launch",
+            "mainClass": "RegForm",
+            "projectName": "src_f303cef7"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Slider",
+            "request": "launch",
+            "mainClass": "Slider"
+        }
+    ]
+}

@@ -1,0 +1,1450 @@
+// Que 1:
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.events.*;
+
+class Set1 extends JFrame {
+    Container c;
+    JLabel usrName, psw, result;
+    JTextField t1, t2;
+    JButton close, display;
+
+    Set1() {
+        c = this.getContentPane();
+        usrName = new JLabel("Username");
+        usrName.setBounds(10, 40, 200, 30);
+        psw = new JLabel("Password");
+        psw.setBounds(10, 80, 200, 30);
+        t1 = new JTextField();
+        t1.setBounds(120, 30, 200, 20);
+        t2 = new JTextField();
+        t2.setBounds(120, 70, 200, 20);
+        close = new JButton("Close");
+        close.setBounds(200, 220, 100, 20);
+        result = new JLabel("Result");
+        result.setBounds(130, 100, 100, 20);
+        display = new JButton("Display");
+        display.setBounds(80, 220, 100, 20);
+
+        c.add(usrName);
+        c.add(psw);
+        c.add(close);
+        c.add(t1);
+        c.add(t2);
+        c.add(result);
+        c.add(display);
+
+        display.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                int no1 = Integer.parseInt(t1.getText());
+                int no2 = Integer.parseInt(t2.getText());
+                if (no1 == no2 * no2 * no2) {
+                    First2Frame s2 = new First2Frame();
+                    s2.setSize(500, 500);
+                    s2.setLayout(null);
+                    s2.setVisible(true);
+                } else {
+                    result.setText("Fail");
+                }
+            }
+        });
+
+        close.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+
+    }
+
+    public static void main(String[] args) {
+        Set1 s1 = new Set1();
+        s1.setSize(500, 500);
+        s1.setLayout(null);
+        s1.setVisible(true);
+    }
+}
+
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class First2Frame extends JFrame {
+    
+    JFrame frame;
+    JLabel name,mail,gender,designation,dept,addr;
+    JTextField t1,t2,t3,t4;
+    JTextArea taddr;
+    JRadioButton male,female;
+    ButtonGroup bg;
+    JScrollPane scroll;
+    JButton submit,close;
+    
+    public First2Frame() {
+        // TODO Auto-generated constructor stub
+        
+        frame = new JFrame();
+        
+        name = new JLabel("Name: ");
+        name.setBounds(30, 30, 100, 30);
+        
+        t1 = new JTextField();
+        t1.setBounds(150, 30, 200, 30);
+        
+        mail = new JLabel("Mail Id: ");
+        mail.setBounds(30, 80, 100, 30);
+        
+        t2 = new JTextField();
+        t2.setBounds(150, 80, 200, 30);
+         
+        gender = new JLabel("Gender: ");
+        gender.setBounds(30, 130, 100, 30);
+        
+        male = new JRadioButton("Male",true);
+        male.setBounds(150, 130, 80, 30);
+        
+        female = new JRadioButton("Female",true);
+        female.setBounds(250, 130, 80, 30);
+        
+        bg = new ButtonGroup();
+        bg.add(male);
+        bg.add(female);
+         
+        designation = new JLabel("Designation: ");
+        designation.setBounds(30, 180, 100, 30);
+        
+        t3 = new JTextField();
+        t3.setBounds(150, 180, 200, 30);
+         
+        dept = new JLabel("Department: ");
+        dept.setBounds(30, 230, 100, 30);
+        
+        t4 = new JTextField();
+        t4.setBounds(150, 230, 200, 30);
+         
+        addr = new JLabel("Address: ");
+        addr.setBounds(30, 280, 100, 30);
+        
+        taddr = new JTextArea();
+        scroll = new JScrollPane(taddr);
+        scroll.setBounds(150, 280, 200, 80);
+        
+        submit = new JButton("Submit");
+        submit.setBounds(150, 400, 100, 30);
+        
+        close = new JButton("Close");
+        close.setBounds(250, 400, 100, 30);
+        
+        frame.add(name);
+        frame.add(mail);
+        frame.add(gender);
+        frame.add(designation);
+        frame.add(dept);
+        frame.add(addr);
+        frame.add(t1);
+        frame.add(t2);
+        frame.add(t3);
+        frame.add(t4);
+        frame.add(scroll);
+        frame.add(male);
+        frame.add(female);
+        frame.add(submit);
+        frame.add(close);
+        
+        frame.setSize(500,500);
+        frame.setLayout(null);
+        frame.setVisible(true);
+        
+        close.addActionListener(new ActionListener() {
+            
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO Auto-generated method stub
+                System.exit(0);
+            }
+        });
+        
+        submit.addActionListener(new ActionListener() {
+            
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO Auto-generated method stub
+                String str1 = t1.getText();
+                String str2 = t2.getText();
+                String str3 = t3.getText();
+                String str4 = t4.getText();
+                String str6 = taddr.getText();
+                
+                String str5;
+                if(male.isSelected())
+                {
+                    str5 = male.getText();
+                }
+                else
+                {
+                    str5 = female.getText();
+                }
+                
+                frame = new JFrame();
+                
+                JLabel name = new JLabel("Name: ");
+                name.setBounds(30, 30, 100, 30);
+                
+                JLabel display1 = new JLabel("Display");
+                display1.setBounds(150, 30, 200, 30);
+                
+                JLabel mail = new JLabel("Mail Id: ");
+                mail.setBounds(30, 80, 100, 30);
+                
+                JLabel display2 = new JLabel("Display");
+                display2.setBounds(150, 80, 200, 30);
+                 
+                JLabel gender = new JLabel("Gender: ");
+                gender.setBounds(30, 130, 100, 30);
+                
+                JLabel display3 = new JLabel("Display");
+                display3.setBounds(150, 130, 80, 30);
+                
+                JLabel designation = new JLabel("Designation: ");
+                designation.setBounds(30, 180, 100, 30);
+                
+                JLabel display4 = new JLabel("Display");
+                display4.setBounds(150, 180, 200, 30);
+                 
+                JLabel dept = new JLabel("Department: ");
+                dept.setBounds(30, 230, 100, 30);
+                
+                JLabel display5 = new JLabel("Display");
+                display5.setBounds(150, 230, 200, 30);
+                 
+                JLabel addr = new JLabel("Address: ");
+                addr.setBounds(30, 280, 100, 30);
+                
+                JTextArea displayAddr = new JTextArea();
+                scroll = new JScrollPane(displayAddr);
+                scroll.setBounds(150, 280, 200, 80);
+                
+                frame.add(name);
+                frame.add(mail);
+                frame.add(gender);
+                frame.add(designation);
+                frame.add(dept);
+                frame.add(addr);
+                frame.add(display1);
+                frame.add(display2);
+                frame.add(display3);
+                frame.add(display4);
+                frame.add(display5);
+                frame.add(scroll);
+                
+                frame.setSize(500, 500);
+                frame.setLayout(null);
+                frame.setVisible(true);
+                
+                display1.setText(str1);
+                display2.setText(str2);
+                display3.setText(str5);
+                display4.setText(str3);
+                display5.setText(str4);
+                displayAddr.setText(str6);
+                
+            }
+        });
+    }
+    
+    public static void main(String [] args)
+    {
+        First2Frame first = new First2Frame();
+    }
+}
+
+Que 2:
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.events.*;
+
+class Set2 extends JFrame {
+    Container c;
+    JLabel usrName, psw, result;
+    JTextField t1, t2;
+    JButton close, display;
+
+    Set2() {
+        c = this.getContentPane();
+        usrName = new JLabel("Username");
+        usrName.setBounds(10, 40, 200, 30);
+        psw = new JLabel("Password");
+        psw.setBounds(10, 80, 200, 30);
+        t1 = new JTextField();
+        t1.setBounds(120, 30, 200, 20);
+        t2 = new JTextField();
+        t2.setBounds(120, 70, 200, 20);
+        close = new JButton("Close");
+        close.setBounds(200, 220, 100, 20);
+        display = new JButton("Display");
+        display.setBounds(120, 300, 100, 20);
+        result = new JLabel("Result");
+        result.setBounds(120, 350, 100, 20);
+
+        c.add(display);
+        c.add(usrName);
+        c.add(psw);
+        c.add(close);
+        c.add(t1);
+        c.add(t2);
+        c.add(result);
+        display.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int no1 = Integer.parseInt(t1.getText());
+                int no2 = Integer.parseInt(t2.getText());
+                int i, fact = 1;
+                // int number=no2;//It is the number to calculate factorial
+                for (i = 1; i <= no2; i++) {
+                    fact = fact * i;
+                    // return fact;
+                    if (no1 == fact) {
+                        result.setText("done");
+                    } else {
+                        result.setText("fail");
+                    }
+                }
+            }
+        });
+
+        close.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+
+    }
+
+    public static void main(String[] args) {
+        First2Frame s1 = new First2Frame();
+        s1.setSize(500, 500);
+        s1.setLayout(null);
+        s1.setVisible(true);
+    }
+}
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class First2Frame extends JFrame {
+    
+    JFrame frame;
+    JLabel name,mail,gender,designation,dept,addr;
+    JTextField t1,t2,t3,t4;
+    JTextArea taddr;
+    JRadioButton male,female;
+    ButtonGroup bg;
+    JScrollPane scroll;
+    JButton submit,close;
+    
+    public First2Frame() {
+        // TODO Auto-generated constructor stub
+        
+        frame = new JFrame();
+        
+        name = new JLabel("Name: ");
+        name.setBounds(30, 30, 100, 30);
+        
+        t1 = new JTextField();
+        t1.setBounds(150, 30, 200, 30);
+        
+        mail = new JLabel("Mail Id: ");
+        mail.setBounds(30, 80, 100, 30);
+        
+        t2 = new JTextField();
+        t2.setBounds(150, 80, 200, 30);
+         
+        gender = new JLabel("Gender: ");
+        gender.setBounds(30, 130, 100, 30);
+        
+        male = new JRadioButton("Male",true);
+        male.setBounds(150, 130, 80, 30);
+        
+        female = new JRadioButton("Female",true);
+        female.setBounds(250, 130, 80, 30);
+        
+        bg = new ButtonGroup();
+        bg.add(male);
+        bg.add(female);
+         
+        designation = new JLabel("Designation: ");
+        designation.setBounds(30, 180, 100, 30);
+        
+        t3 = new JTextField();
+        t3.setBounds(150, 180, 200, 30);
+         
+        dept = new JLabel("Department: ");
+        dept.setBounds(30, 230, 100, 30);
+        
+        t4 = new JTextField();
+        t4.setBounds(150, 230, 200, 30);
+         
+        addr = new JLabel("Address: ");
+        addr.setBounds(30, 280, 100, 30);
+        
+        taddr = new JTextArea();
+        scroll = new JScrollPane(taddr);
+        scroll.setBounds(150, 280, 200, 80);
+        
+        submit = new JButton("Submit");
+        submit.setBounds(150, 400, 100, 30);
+        
+        close = new JButton("Close");
+        close.setBounds(250, 400, 100, 30);
+        
+        frame.add(name);
+        frame.add(mail);
+        frame.add(gender);
+        frame.add(designation);
+        frame.add(dept);
+        frame.add(addr);
+        frame.add(t1);
+        frame.add(t2);
+        frame.add(t3);
+        frame.add(t4);
+        frame.add(scroll);
+        frame.add(male);
+        frame.add(female);
+        frame.add(submit);
+        frame.add(close);
+        
+        frame.setSize(500,500);
+        frame.setLayout(null);
+        frame.setVisible(true);
+        
+        close.addActionListener(new ActionListener() {
+            
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO Auto-generated method stub
+                System.exit(0);
+            }
+        });
+        
+        submit.addActionListener(new ActionListener() {
+            
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO Auto-generated method stub
+                String str1 = t1.getText();
+                String str2 = t2.getText();
+                String str3 = t3.getText();
+                String str4 = t4.getText();
+                String str6 = taddr.getText();
+                
+                String str5;
+                if(male.isSelected())
+                {
+                    str5 = male.getText();
+                }
+                else
+                {
+                    str5 = female.getText();
+                }
+                
+                frame = new JFrame();
+                
+                JLabel name = new JLabel("Name: ");
+                name.setBounds(30, 30, 100, 30);
+                
+                JLabel display1 = new JLabel("Display");
+                display1.setBounds(150, 30, 200, 30);
+                
+                JLabel mail = new JLabel("Mail Id: ");
+                mail.setBounds(30, 80, 100, 30);
+                
+                JLabel display2 = new JLabel("Display");
+                display2.setBounds(150, 80, 200, 30);
+                 
+                JLabel gender = new JLabel("Gender: ");
+                gender.setBounds(30, 130, 100, 30);
+                
+                JLabel display3 = new JLabel("Display");
+                display3.setBounds(150, 130, 80, 30);
+                
+                JLabel designation = new JLabel("Designation: ");
+                designation.setBounds(30, 180, 100, 30);
+                
+                JLabel display4 = new JLabel("Display");
+                display4.setBounds(150, 180, 200, 30);
+                 
+                JLabel dept = new JLabel("Department: ");
+                dept.setBounds(30, 230, 100, 30);
+                
+                JLabel display5 = new JLabel("Display");
+                display5.setBounds(150, 230, 200, 30);
+                 
+                JLabel addr = new JLabel("Address: ");
+                addr.setBounds(30, 280, 100, 30);
+                
+                JTextArea displayAddr = new JTextArea();
+                scroll = new JScrollPane(displayAddr);
+                scroll.setBounds(150, 280, 200, 80);
+                
+                frame.add(name);
+                frame.add(mail);
+                frame.add(gender);
+                frame.add(designation);
+                frame.add(dept);
+                frame.add(addr);
+                frame.add(display1);
+                frame.add(display2);
+                frame.add(display3);
+                frame.add(display4);
+                frame.add(display5);
+                frame.add(scroll);
+                
+                frame.setSize(500, 500);
+                frame.setLayout(null);
+                frame.setVisible(true);
+                
+                display1.setText(str1);
+                display2.setText(str2);
+                display3.setText(str5);
+                display4.setText(str3);
+                display5.setText(str4);
+                displayAddr.setText(str6);
+                
+            }
+        });
+    }
+    
+    public static void main(String [] args)
+    {
+        First2Frame first = new First2Frame();
+    }
+}
+
+Que 3:
+
+import javax.swing.*;
+
+import com.sun.javafx.scene.layout.region.Margins.Converter;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.events.*;
+
+class Set3 extends JFrame {
+    Container c;
+    JLabel usrName, psw, result;
+    JTextField t1, t2;
+    JButton close, display;
+
+    Set3() {
+        c = this.getContentPane();
+        usrName = new JLabel("Username");
+        usrName.setBounds(10, 40, 200, 30);
+        psw = new JLabel("Password");
+        psw.setBounds(10, 80, 200, 30);
+        t1 = new JTextField();
+        t1.setBounds(120, 30, 200, 20);
+        t2 = new JTextField();
+        t2.setBounds(120, 70, 200, 20);
+        close = new JButton("Close");
+        close.setBounds(200, 220, 100, 20);
+        result = new JLabel("Result");
+        result.setBounds(130, 100, 100, 20);
+        display = new JButton("Display");
+        display.setBounds(80, 220, 100, 20);
+
+        c.add(usrName);
+        c.add(psw);
+        c.add(close);
+        c.add(t1);
+        c.add(t2);
+        c.add(result);
+        c.add(display);
+
+        display.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                int no1 = Integer.parseInt(t1.getText());
+                int no2 = Integer.parseInt(t2.getText());
+                int no3 = no1 * 3;
+                int no4 = no2 * 7;
+
+                if (no3 + no4 > 100) {
+                    Third2Frame t2 = new Third2Frame();
+                } else {
+                    result.setText("Fail");
+                }
+            }
+        });
+
+        close.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+
+    }
+
+    public static void main(String[] args) {
+        Set3 s3 = new Set3();
+        s3.setSize(500, 500);
+        s3.setLayout(null);
+        s3.setVisible(true);
+    }
+}
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+
+public class Third2Frame extends JFrame {
+    
+    JFrame frame;
+    JLabel unit,result;
+    JTextField t1;
+    JMenu menu1,menu2;
+    JMenuBar bar;
+    JMenuItem RtoD,RtoE,RtoY,CtoM,CtoK;
+    JButton close;
+    
+    public Third2Frame() {
+        // TODO Auto-generated constructor stub
+        
+        frame = new JFrame("Menu");
+        
+        bar = new JMenuBar();
+        
+        menu1 = new JMenu("Menu1");
+        RtoD = new JMenuItem("RtoD");
+        RtoE = new JMenuItem("RtoE");
+        RtoY = new JMenuItem("RtoY");
+        menu1.add(RtoD);
+        menu1.add(RtoE);
+        menu1.add(RtoY);
+        bar.add(menu1);
+        
+        menu2 = new JMenu("Menu1");
+        CtoM = new JMenuItem("CtoM");
+        CtoK = new JMenuItem("CtoK");
+        menu2.add(CtoM);
+        menu2.add(CtoK);
+        bar.add(menu2);
+        
+        unit = new JLabel("Enter Number: ");
+        unit.setBounds(30, 30, 100, 30);
+        
+        t1 = new JTextField();
+        t1.setBounds(130, 30, 140, 30);
+        
+        result = new JLabel("Result");
+        result.setBounds(130, 100, 100, 30);
+        
+        close = new JButton("CLOSE");
+        close.setBounds(200, 300, 100, 20);
+        
+        frame.setJMenuBar(bar);
+        frame.setSize(400, 400);
+        frame.setLayout(null);
+        frame.setVisible(true);
+        frame.add(unit);
+        frame.add(t1);
+        frame.add(result);
+        frame.add(close);
+        
+        RtoD.addActionListener(new ActionListener() {
+            
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO Auto-generated method stub
+                String str = t1.getText();
+                
+                Double no1 = Double.parseDouble(str);
+                result.setText(no1*0.014+"");
+            }
+        });
+        
+        RtoE.addActionListener(new ActionListener() {
+            
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO Auto-generated method stub
+                String str = t1.getText();
+                
+                Double no1 = Double.parseDouble(str);
+                result.setText(no1*0.012+"");
+            }
+        });
+        
+        RtoY.addActionListener(new ActionListener() {
+            
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO Auto-generated method stub
+                String str = t1.getText();
+                
+                Double no1 = Double.parseDouble(str);
+                result.setText(no1*1.54+"");
+            }
+        });
+        
+        CtoM.addActionListener(new ActionListener() {
+            
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO Auto-generated method stub
+                String str = t1.getText();
+                
+                Double no1 = Double.parseDouble(str);
+                result.setText(no1*0.01+"");
+            }
+        });
+        
+        CtoK.addActionListener(new ActionListener() {
+            
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO Auto-generated method stub
+                String str = t1.getText();
+                
+                Double no1 = Double.parseDouble(str);
+                result.setText(no1*0.00001+"");
+            }
+        });
+        
+        close.addActionListener(new ActionListener() {
+            
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                // TODO Auto-generated method stub
+                System.exit(0);
+            }
+        });
+    }
+    
+    public static void main(String [] args)
+    {
+        Third2Frame t2 = new Third2Frame();
+        
+    }
+}
+
+
+Que 4:
+
+import javax.swing.*;
+
+import com.sun.javafx.scene.layout.region.Margins.Converter;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.events.*;
+
+class Set4 extends JFrame {
+    Container c;
+    JLabel usrName, psw, result;
+    JTextField t1, t2;
+    JButton close, display;
+
+    Set4() {
+        c = this.getContentPane();
+        usrName = new JLabel("Username");
+        usrName.setBounds(10, 40, 200, 30);
+        psw = new JLabel("Password");
+        psw.setBounds(10, 80, 200, 30);
+        t1 = new JTextField();
+        t1.setBounds(120, 30, 200, 20);
+        t2 = new JTextField();
+        t2.setBounds(120, 70, 200, 20);
+        close = new JButton("Close");
+        close.setBounds(200, 220, 100, 20);
+        result = new JLabel("Result");
+        result.setBounds(130, 100, 100, 20);
+        display = new JButton("Display");
+        display.setBounds(80, 220, 100, 20);
+
+        c.add(usrName);
+        c.add(psw);
+        c.add(close);
+        c.add(t1);
+        c.add(t2);
+        c.add(result);
+        c.add(display);
+
+        display.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                int no1 = Integer.parseInt(t1.getText());
+                int no2 = Integer.parseInt(t2.getText());
+                int no3 = no1 + no2;
+
+                if (no3 % 2 == 0) {
+                    Forth2Frame f2 = new Forth2Frame();
+                } else {
+                    result.setText("Fail");
+                }
+            }
+        });
+
+        close.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+
+    }
+
+    public static void main(String[] args) {
+        Set4 s4 = new Set4();
+        s4.setSize(500, 500);
+        s4.setLayout(null);
+        s4.setVisible(true);
+    }
+}
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Forth2Frame extends JFrame
+{
+    JFrame frame;
+    JLabel title,name,gender,course,categories;
+    JTextField t1,t2;
+    JButton close,submit;
+    JRadioButton male,female;
+    ButtonGroup bg;
+    JComboBox box;
+    
+    public Forth2Frame() {
+        // TODO Auto-generated constructor stub
+        frame = new JFrame();
+        
+        title = new JLabel("Student Sports Registration form");
+        title.setBounds(100,0, 250, 30);
+        
+        name = new JLabel("Name: ");
+        name.setBounds(30, 30, 100, 30);
+        
+        t1 = new JTextField();
+        t1.setBounds(100, 30, 180, 30);
+        
+        gender = new JLabel("Gender: ");
+        gender.setBounds(30, 70, 100, 30);
+        
+        male = new JRadioButton("Male");
+        male.setBounds(100, 70, 70, 30);
+        
+        female = new JRadioButton("Female",true);
+        female.setBounds(180, 70, 80, 30);
+        
+        bg = new ButtonGroup();
+        bg.add(male);
+        bg.add(female);
+        
+        course = new JLabel("Course: ");
+        course.setBounds(30, 110, 100, 30);
+        
+        t2 = new JTextField();
+        t2.setBounds(100, 110, 180, 30);
+        
+        categories = new JLabel("Categories: ");
+        categories.setBounds(30, 150, 100, 30);
+        
+        String item[] = {"Athletic sports","Acrobatic sports","Beach sports","Indoor sports"
+                ,"Summer sports"};
+        box = new JComboBox(item);
+        box.setBounds(100, 150, 160, 30);
+        
+        submit = new JButton("Submit");
+        submit.setBounds(100, 200, 100, 20);
+        
+        close = new JButton("CLOSE");
+        close.setBounds(200, 350, 100, 20);
+        
+        frame.add(title);
+        frame.add(name);
+        frame.add(gender);
+        frame.add(course);
+        frame.add(categories);
+        frame.add(t1);
+        frame.add(t2);
+        frame.add(male);
+        frame.add(female);
+        frame.add(box);
+        frame.add(submit);
+        frame.add(close);
+        
+        frame.setSize(500, 500);
+        frame.setLayout(null);
+        frame.setVisible(true);
+        
+        close.addActionListener(new ActionListener() {
+            
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                // TODO Auto-generated method stub
+                System.exit(0);
+            }
+        });
+        
+        submit.addActionListener(new ActionListener() {
+            
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO Auto-generated method stub
+                String str1 = t1.getText().toString();
+                String str2 = t2.getText().toString();
+                String str3;
+                if(male.isSelected())
+                {
+                    str3 = male.getText().toString();
+                }
+                else
+                {
+                    str3 = female.getText().toString();
+                }
+                String str5 = box.getSelectedItem().toString();
+            
+                JFrame f = new JFrame();
+                JLabel result = new JLabel("Result");
+                result.setBounds(0, 150, 500, 30);
+                f.add(result);
+                result.setText("Name: "+str1+"\n"+"Course Name: "+str2+"\n"
+                +"Gender: "+str3+"\n"+"Categories: "+str5+"\n");
+                f.setSize(500,500);
+                f.setLayout(null);
+                f.setVisible(true);
+            }
+        });
+    }
+    
+    public static void main(String [] args)
+    {
+        Forth2Frame f2 = new Forth2Frame();
+        
+    }
+}
+
+
+QUE 5:
+
+import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Set5 extends JFrame {
+    JTabbedPane tp;
+
+    Set5() {
+        tp = new JTabbedPane();
+        tp.add("colors", new cPanel());
+        // tp.add("Scroll Pane", new DPanel());
+        tp.add("Scroll Pane", new Epanel());
+        add(tp);
+    }
+
+    public static void main(String[] args) {
+        Set5 s5 = new Set5();
+        s5.setSize(500, 500);
+        s5.setVisible(true);
+    }
+}
+
+class cPanel extends JPanel {
+    JComboBox cb;
+
+    cPanel() {
+        String clrName[] = { "Red", "Blue", "Gray" };
+        cb = new JComboBox(clrName);
+        add(cb);
+        cb.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                // TODO Auto-generated method stub
+                switch (cb.getSelectedIndex()) {
+                case 0:
+                    setBackground(Color.RED);
+                    break;
+                case 1:
+                    setBackground(Color.BLUE);
+                    break;
+                case 2:
+                    setBackground(Color.GRAY);
+                    break;
+                }
+            }
+        });
+
+    }
+}
+
+// class DPanel extends JPanel {
+// DPanel() {
+// JTextArea textArea = new JTextArea(5, 30);
+// JScrollPane scrollPane = new JScrollPane(textArea);
+// add(scrollPane, BorderLayout.CENTER);
+// }
+// }
+
+class Epanel extends JPanel {
+    JLabel display;
+    JList jw;
+
+    Epanel() {
+        display = new JLabel();
+        String week[] = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+        jw = new JList(week);
+        jw.setSelectedIndex(0);
+        add(display);
+        add(jw);
+
+        jw.addListSelectionListener(new ListSelectionListener() {
+
+            @Override
+            public void valueChanged(ListSelectionEvent arg0) {
+                // TODO Auto-generated method stub
+                display.setText("Today is " + jw.getSelectedValue().toString());
+            }
+        });
+    }
+}
+
+Que 6:
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.events.*;
+
+class Set6 extends JFrame {
+    Container c;
+    JLabel usrName, psw, result;
+    JTextField t1, t2;
+    JButton close, display;
+
+    Set6() {
+        c = this.getContentPane();
+        usrName = new JLabel("Username");
+        usrName.setBounds(10, 40, 200, 30);
+        psw = new JLabel("Password");
+        psw.setBounds(10, 80, 200, 30);
+        t1 = new JTextField();
+        t1.setBounds(120, 30, 200, 20);
+        t2 = new JTextField();
+        t2.setBounds(120, 70, 200, 20);
+        close = new JButton("Close");
+        close.setBounds(200, 220, 100, 20);
+        display = new JButton("Display");
+        display.setBounds(120, 300, 100, 20);
+        result = new JLabel("Result");
+        result.setBounds(120, 350, 100, 20);
+
+        c.add(display);
+        c.add(usrName);
+        c.add(psw);
+        c.add(close);
+        c.add(t1);
+        c.add(t2);
+        c.add(result);
+        display.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int no1 = Integer.parseInt(t1.getText());
+                int no2 = Integer.parseInt(t2.getText());
+                int i, fact = 1;
+                // int number=no2;//It is the number to calculate factorial
+                for (i = 1; i <= no2; i++) {
+                    fact = fact * i;
+                    // return fact;
+                    if (no1 == fact) {
+                        Sixth2Frame s2 = new Sixth2Frame();
+                    } else {
+                        result.setText("fail");
+                    }
+                }
+            }
+        });
+
+        close.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+
+    }
+
+    public static void main(String[] args) {
+        Set6 s6 = new Set6();
+        s6.setSize(500, 500);
+        s6.setLayout(null);
+        s6.setVisible(true);
+    }
+}
+
+import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
+import java.awt.*;
+import java.awt.event.*;
+
+public class Sixth2Frame extends JFrame{
+    
+    JFrame frame;
+    JLabel one,two,three;
+    JSlider red,yellow,gray;
+    JButton close;
+    
+    public Sixth2Frame() {
+        // TODO Auto-generated constructor stub
+        
+        frame = new JFrame();
+        
+        one = new JLabel("Red Slider ");
+        one.setBounds(40, 40, 100, 30);
+        
+        red = new JSlider();
+        red.setBounds(100, 40, 250, 100);
+        
+        two = new JLabel("Yellow Slider ");
+        two.setBounds(40, 100, 100, 30);
+        
+        yellow = new JSlider();
+        yellow.setBounds(100, 100, 250, 100);
+        
+        three = new JLabel("Gray Slider ");
+        three.setBounds(40, 160, 100, 30);
+        
+        gray = new JSlider();
+        gray.setBounds(100, 160, 250, 100);
+        
+        close = new JButton("CLOSE");
+        close.setBounds(200, 350, 100, 20);
+        
+        frame.add(one);
+        frame.add(two);
+        frame.add(three);
+        frame.add(red);
+        frame.add(yellow);
+        frame.add(gray);
+        frame.add(close);
+        
+        frame.setSize(500, 500);
+        frame.setLayout(null);
+        frame.setVisible(true);
+        
+        close.addActionListener(new ActionListener() {
+            
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO Auto-generated method stub
+                System.exit(0);
+            }
+        });
+        
+        red.addChangeListener(new ChangeListener() {
+            
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                // TODO Auto-generated method stub
+                frame.getContentPane().setBackground(Color.RED);
+            }
+        });
+        
+        yellow.addChangeListener(new ChangeListener() {
+            
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                // TODO Auto-generated method stub
+                frame.getContentPane().setBackground(Color.YELLOW);
+            }
+        });
+
+        gray.addChangeListener(new ChangeListener() {
+            
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                // TODO Auto-generated method stub
+                frame.getContentPane().setBackground(Color.LIGHT_GRAY);
+            }
+        });
+    }
+    
+    public static void main(String [] args)
+    {
+        Sixth2Frame s2 = new Sixth2Frame();
+    }
+}
+
+Que 7:
+
+import javax.swing.*;
+
+import com.sun.javafx.scene.layout.region.Margins.Converter;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.events.*;
+
+class Set7 extends JFrame {
+    Container c;
+    JLabel usrName, psw, result;
+    JTextField t1, t2;
+    JButton close, display;
+
+    Set7() {
+        c = this.getContentPane();
+        usrName = new JLabel("Username");
+        usrName.setBounds(10, 40, 200, 30);
+        psw = new JLabel("Password");
+        psw.setBounds(10, 80, 200, 30);
+        t1 = new JTextField();
+        t1.setBounds(120, 30, 200, 20);
+        t2 = new JTextField();
+        t2.setBounds(120, 70, 200, 20);
+        close = new JButton("Close");
+        close.setBounds(200, 220, 100, 20);
+        result = new JLabel("Result");
+        result.setBounds(130, 100, 100, 20);
+        display = new JButton("Display");
+        display.setBounds(80, 220, 100, 20);
+
+        c.add(usrName);
+        c.add(psw);
+        c.add(close);
+        c.add(t1);
+        c.add(t2);
+        c.add(result);
+        c.add(display);
+
+        display.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                int no1 = Integer.parseInt(t1.getText());
+                int no2 = Integer.parseInt(t2.getText());
+                int no3 = no1 * 5;
+                int no4 = no2 * 10;
+
+                if (no3 + no4 > 100) {
+                    Seventh2Frame s2 = new Seventh2Frame();
+                } else {
+                    result.setText("Fail");
+                }
+            }
+        });
+
+        close.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+
+    }
+
+    public static void main(String[] args) {
+        Set7 s7 = new Set7();
+        s7.setSize(500, 500);
+        s7.setLayout(null);
+        s7.setVisible(true);
+    }
+}
+
+import javax.swing.*;
+
+import java.awt.*;
+import java.awt.event.*;
+
+public class Seventh2Frame extends JFrame
+{
+    JFrame frame;
+    JLabel number1,number2;
+    JTextField t1,t2;
+    JButton add,multi,divide,sub,close;
+    
+    Seventh2Frame()
+    {
+        frame = new JFrame();
+        
+        number1 = new JLabel("First Number: ");
+        number1.setBounds(0, 30, 200, 20);
+        
+        t1 = new JTextField();
+        t1.setBounds(120, 30, 200, 20);
+        
+        number2 = new JLabel("Second Number: ");
+        number2.setBounds(0, 70, 200, 20);
+        
+        t2 = new JTextField();
+        t2.setBounds(120, 70, 200, 20);
+        
+        add = new JButton("ADD");
+        add.setBounds(50, 150, 60, 20);
+        
+        multi = new JButton("MULTI");
+        multi.setBounds(130, 150, 60, 20);
+        
+        divide = new JButton("DIVIDE");
+        divide.setBounds(210, 150, 60, 20);
+        
+        sub = new JButton("SUB");
+        sub.setBounds(290, 150, 60, 20);
+                
+        
+        close = new JButton("CLOSE");
+        close.setBounds(130, 250, 100, 20);
+        
+        frame.add(number1);
+        frame.add(number2);
+        frame.add(t1);
+        frame.add(t2);
+        frame.add(multi);
+        frame.add(add);
+        frame.add(divide);
+        frame.add(sub);
+        frame.add(close);
+        
+        frame.setSize(500, 500);
+        frame.setLayout(null);
+        frame.setVisible(true);
+        
+        close.addActionListener(new ActionListener() {
+            
+            public void actionPerformed(ActionEvent arg0) {
+                // TODO Auto-generated method stub
+                System.exit(0);
+            }
+        });
+        
+        add.addActionListener(new ActionListener() {
+            
+            public void actionPerformed(ActionEvent arg0) {
+                // TODO Auto-generated method stub
+                
+                String strNum1 = t1.getText();
+                String strNum2 = t2.getText();
+                
+                int no1 = Integer.parseInt(strNum1);
+                int no2 = Integer.parseInt(strNum2);
+                
+                
+                JFrame f = new JFrame();
+                JLabel result = new JLabel("Result");
+                result.setBounds(150, 150, 100, 30);
+                f.add(result);
+                result.setText(no1+no2+"");
+                f.setSize(500,500);
+                f.setLayout(null);
+                f.setVisible(true);
+            }
+        });
+        
+        multi.addActionListener(new ActionListener() {
+            
+            public void actionPerformed(ActionEvent arg0) {
+                // TODO Auto-generated method stub
+                
+                String strNum1 = t1.getText();
+                String strNum2 = t2.getText();
+                
+                int no1 = Integer.parseInt(strNum1);
+                int no2 = Integer.parseInt(strNum2);
+                
+                JFrame f = new JFrame();
+                JLabel result = new JLabel("Result");
+                result.setBounds(150, 150, 100, 30);
+                f.add(result);
+                result.setText(no1*no2+"");
+                f.setSize(500,500);
+                f.setLayout(null);
+                f.setVisible(true);
+            }
+        });
+
+        divide.addActionListener(new ActionListener() {
+    
+            public void actionPerformed(ActionEvent arg0) {
+                // TODO Auto-generated method stub
+
+                String strNum1 = t1.getText();
+                String strNum2 = t2.getText();
+                
+                int no1 = Integer.parseInt(strNum1);
+                int no2 = Integer.parseInt(strNum2);
+                
+                JFrame f = new JFrame();
+                JLabel result = new JLabel("Result");
+                result.setBounds(150, 150, 100, 30);
+                f.add(result);
+                result.setText(no1/no2+"");
+                f.setSize(500,500);
+                f.setLayout(null);
+                f.setVisible(true);
+            }
+        });
+
+        sub.addActionListener(new ActionListener() {
+            
+            public void actionPerformed(ActionEvent arg0) {
+                // TODO Auto-generated method stub
+
+                String strNum1 = t1.getText();
+                String strNum2 = t2.getText();
+                
+                int no1 = Integer.parseInt(strNum1);
+                int no2 = Integer.parseInt(strNum2);
+                
+                JFrame f = new JFrame();
+                JLabel result = new JLabel("Result");
+                result.setBounds(150, 150, 100, 30);
+                f.add(result);
+                result.setText(no1-no2+"");
+                f.setSize(500,500);
+                f.setLayout(null);
+                f.setVisible(true);
+            }
+        });
+    }
+    public static void main(String [] args)
+    {
+        Seventh2Frame s2 = new Seventh2Frame();
+    }
+}

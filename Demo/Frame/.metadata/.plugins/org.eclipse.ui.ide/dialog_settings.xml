@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="/Users/harsh/Desktop/Harsh/Frame/src"/>
+		<item value="/Users/harsh/Desktop/Harsh/Frame"/>
+		<item value="/Users/harsh/Desktop/PyHarsh/BookQue"/>
+		<item value="/Users/harsh/Desktop/PyHarsh/HospQue"/>
+		<item value="/Users/harsh/Desktop/PyHarsh/RestQue"/>
+		<item value="/Users/harsh/Desktop/PyHarsh/thirdQue"/>
+		<item value="/Users/harsh/Desktop/PyHarsh/SecQue"/>
+	</list>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="425" key="DIALOG_X_ORIGIN"/>
+		<item value="283" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

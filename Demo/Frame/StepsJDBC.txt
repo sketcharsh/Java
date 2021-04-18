@@ -1,0 +1,62 @@
+String user="it18a36"
+String pass="sumo@123"
+String url="jdbc:mysql://128.66.203.247/it18a36";
+
+1) Load the JDBC Driver:-
+
+Class.forName("oracle.jdbc.driver.OracleDriver")
+Class.forName("com.sybase.jdbc.SybDriver")
+Class.forName("sun.jdbc.odbc.JdbcOdbcDriver")
+
+run:
+
+public void loadDriver() throws ClassNotFoundException{
+	Class.forName("com.mysql.jdbc.Driver");
+}
+
+2) Connection URL:-
+URL Should refer the database
+Examples:
+run:
+
+public void makeConnection() throws SQLException{
+	connection = DriverManeger.getConnection(url,user,pass);
+}
+
+3)Establish Connection:-
+
+getConnection(String url,String userName,String password)
+
+Connection connection = DriverManager.getConnection("jdbc:odbc:myaccess");
+
+4)Statement Object:-
+
+Statement statement = connection.createStatement();
+
+run:
+public void buildStatement() throws SQLException{
+	statement = connection.createStatement();
+}
+
+5) Execute Query:-
+
+ResultSet resultSet = statement.executeQuery(query);
+
+Syntax:
+
+String query = "Select * from Student";
+ResultSet resultSet = statement.executeQuery(query);
+
+6) Process the result:-
+
+next/previous : Moves the cursor to next/previous row in resultSet.
+getIn(index) or getInt(columnname):
+getString() or getString(columnname):
+
+ResultSet set = statement.executeQuery("select * from JavaStud");
+while(set.next());
+{
+	int S_id = set.getInt("S_id");
+	String Fname = set.getString("Fname");
+	String Lname = set.getString("Lname");
+}

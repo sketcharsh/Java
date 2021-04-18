@@ -1,0 +1,9 @@
+127.0.0.1 - - [22/Feb/2018:10:13:34 +0530] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1%0 - - [22/Feb/2018:10:13:35 +0530] "GET /DemoProject/login.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1%0 - - [22/Feb/2018:10:13:53 +0530] "GET /DemoProject/Validate?email=1%40k.j&password=123453 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1%0 - - [22/Feb/2018:10:13:53 +0530] "GET /DemoProject/login.html HTTP/1.1" 304 -
+127.0.0.1 - - [22/Feb/2018:10:15:22 +0530] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1%0 - - [22/Feb/2018:10:15:25 +0530] "GET /DemoProject/Validate HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1%0 - - [22/Feb/2018:10:15:25 +0530] "GET /DemoProject/login.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1%0 - - [22/Feb/2018:10:15:34 +0530] "GET /DemoProject/Validate?email=+heli%40gmail.com&password=12345 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1%0 - - [22/Feb/2018:10:15:34 +0530] "GET /DemoProject/login.html HTTP/1.1" 304 -

@@ -1,0 +1,6 @@
+import java.sql.*;
+public class DemoJDBC {
+	String user;
+	String pass;
+	String
+}
